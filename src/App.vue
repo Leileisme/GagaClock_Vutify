@@ -19,7 +19,7 @@
 
 <script setup>
 import SettingView from './components/SettingView.vue'
-import './/css/main.css'
+
 </script>
 
 <style scoped>

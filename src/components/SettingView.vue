@@ -1,7 +1,7 @@
 <template>
   <v-dialog width="500">
             <template v-slot:activator="{ props }">
-              <v-btn v-bind="props" class="text-md-h6" style="line-height: 1" prepend-icon=" mdi-cog">設定</v-btn>
+              <v-btn v-bind="props" class="text-md-h6" style="line-height: 1" prepend-icon=" mdi-cog" >設定</v-btn>
             </template>
 
             <v-card class="mx-auto" max-width="400">
@@ -61,10 +61,5 @@ const { alarms, selectedAlarm, notify } = storeToRefs(settings)
   background-color: #000 !important;
   color: aqua !important;
 }
-
-/* .vList{
-  background-color: rgb(95, 0, 75)  !important;
-  color: rgb(255, 255, 255) !important;
-} */
 
 </style>
