@@ -54,6 +54,7 @@ export const useListStore = defineStore('list', {
       if (i < 0) return
       this.finishedItems.slice(i, 1)
     },
+    // 目前的項目
     setCurrentItem () {
       this.currentItem = this.break ? '休息一下' : this.items.shift().list
     },
