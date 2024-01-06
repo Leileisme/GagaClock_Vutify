@@ -5,6 +5,7 @@
         <v-col cols="12">
           <h1 class="text-center">代辦清單</h1>
       </v-col>
+
       <!-- :rules 表單驗證規則 -->
       <!-- ref="newItemInput"??? -->
       <v-col cols="12">
@@ -75,7 +76,9 @@
           <tbody>
             <tr v-for="item in finishedItems" :key="item.id">
               <td>{{item.list}}</td>
-              <td icon="mdi-delete" variant="text" color="red" @click="delFinishedItem(item.id)"></td>
+              <td>
+                <v-btn  icon="mdi-delete" variant="text" color="red" @click="delFinishedItem(item.id)"></v-btn>
+              </td>
             </tr>
             <tr v-if="finishedItems.length===0">
               <td colspan="2">沒有已完成清單</td>
@@ -97,15 +100,6 @@ const list = useListStore()
 const { items, finishedItems, newItem, newItemInput, editItemInput } = storeToRefs(list)
 const { addItem, confirmEditItem, editItem, delItem, cancelEditItem, delFinishedItem } = list
 
-const rules = {
-  required: (value) => {
-    return !!value || '欄位必填'
-  },
-  length: (value) => {
-    return value.length >= 3 || '必須是三個字以上'
-  }
-}
-
 const onInputSubmit = async () => {
   // validate() reset() 是 v-text-field 元件裡面的Function
   const validate = await newItemInput.value.validate()
@@ -121,10 +115,19 @@ const onEditInputSubmit = async (id, i) => {
   if (validate.length > 0) return
   confirmEditItem(id)
 }
+
+const rules = {
+  required: (value) => {
+    return !!value || '欄位必填'
+  },
+  length: (value) => {
+    return value.length >= 3 || '必須是三個字以上'
+  }
+}
 </script>
 
   <style scoped>
-  .vContainer{
+    .vContainer{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -133,10 +136,28 @@ const onEditInputSubmit = async (id, i) => {
   .box{
     position: absolute;
     top: 15%;
-    width: 60%;
-    /* height: 80%; */
-    /* overflow-y: scroll; */
-    border: 1px red solid;
+    width: 90%;
+    height: 80%;
+    overflow-y: scroll;
+  background-color: rgba(0, 0, 0,0.5);
+  border-radius: 1rem;
     padding:1rem 3rem;
+  }
+
+  .text{
+    /* color: aqua !important; */
+    text-shadow: 0 0 25px aqua;
+  }
+
+  @media(min-width:768px) {
+  .box{
+  width: 80%;
+  }
+    }
+
+@media(min-width:992px) {
+  .box{
+  width: 70%;
+    }
   }
   </style>

@@ -12,39 +12,30 @@
       </v-app-bar>
 
       <v-main class="main">
-        <!-- <div id="particles-js"></div> -->
-        <!-- <particles id="particles-js" :options="particlesConfig"></particles> -->
-        <div id="tsparticles"></div>
-        <router-view></router-view>
+        <!-- <MyParticles></MyParticles> -->
+
+        <!-- Component = 目前該顯示的路由元件，透過 :is="Component" 會傳進 <component> 這個標籤 -->
+        <router-view v-slot="{ Component }">
+          <!-- 為了效能問題，元件會抽換 -->
+          <!-- KeepAlive 保持被包住的元件不被銷毀 -->
+          <!-- 使用  include 指定只有 HomeView 這個元件不被銷毀  -->
+          <!-- 切換元件時元件取消掛載了，但 setInterval 還在執行 再回去HomeVue不會偵測到-->
+          <!-- HomeVue 的 setInterval 還會再執行一次，速度就會加倍-->
+
+          <!-- <component> 動態元件  使用 is 綁定元件-->
+
+            <KeepAlive include="HomeView">
+            <component :is="Component"></component>
+          </KeepAlive>
+        </router-view>
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+// import { createApp } from 'vue'
 import SettingView from './components/SettingView.vue'
-// 安裝 npm i particles.js 套件，並引入(下面失效)
-// import * as particlesJS from 'particles.js'
-import './particles/particles.min'
-// import Particles from 'particles.vue3'
-import { tsParticles } from '@tsparticles/engine'
-import { particlesConfig } from './particles/particlesConfig'
-
-// onMounted(() => {
-//   Particles.init('#particles-js')
-// })
-
-tsParticles
-  .load({
-    id: 'tsparticles',
-    url: '@/src/particles/particlesjs-config.json'
-  })
-  .then(container => {
-    console.log('callback - tsparticles config loaded')
-  })
-  .catch(error => {
-    console.error(error)
-  })
+import MyParticles from './components/myParticles.vue'
 
 </script>
 
@@ -57,12 +48,6 @@ tsParticles
 .appBar{
   background-color: #000 !important;
   color: aqua !important;
-}
-
-#particles-js{
-  width: 100px;
-  height: 100vh;
-  position: absolute;
 }
 
 </style>
