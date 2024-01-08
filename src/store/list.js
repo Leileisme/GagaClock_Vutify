@@ -18,7 +18,6 @@ export const useListStore = defineStore('list', {
     newItem: '',
     newItemInput: null,
     editItemInput: []
-
   }),
   actions: {
     addItem (list) {
@@ -30,7 +29,7 @@ export const useListStore = defineStore('list', {
       })
     },
     findIndexById (id) {
-      return this.items.findIndex(item => item.id === id)
+      return this.items.findIndex((item) => item.id === id)
     },
     confirmEditItem (id) {
       const i = this.findIndexById(id)
@@ -77,26 +76,16 @@ export const useListStore = defineStore('list', {
       this.timeLeft = this.break ? timeBreak : time
     },
     delFinishedItem (id) {
-      console.log(id)
-      console.log(this.currentItem, 'CURRENT')
-      console.log(this.finishedItems, '.finishedItems')
-      console.log(this.findIndexById(id))
-
-      const i = this.findIndexById(id)
-      console.log(i)
+      const i = this.finishedItems.findIndex(item => item.id === id)
       if (i < 0) return
       this.finishedItems.splice(i, 1)
-      console.log(this.finishedItems)
     }
-
   },
   //  跟 computed 一樣??
-  getters: {
-
-  },
+  getters: {},
   // 存 local storage
   persist: {
-  // local storage 保存的名稱
+    // local storage 保存的名稱
     key: 'pomodoro-list'
   }
 })

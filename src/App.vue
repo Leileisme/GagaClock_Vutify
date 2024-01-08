@@ -12,10 +12,10 @@
       </v-app-bar>
 
       <v-main class="main">
-        <!-- <MyParticles></MyParticles> -->
+        <MyParticles class="MyParticles"></MyParticles>
 
         <!-- Component = 目前該顯示的路由元件，透過 :is="Component" 會傳進 <component> 這個標籤 -->
-        <router-view v-slot="{ Component }">
+        <router-view v-slot="{ Component }" class="routerView">
           <!-- 為了效能問題，元件會抽換 -->
           <!-- KeepAlive 保持被包住的元件不被銷毀 -->
           <!-- 使用  include 指定只有 HomeView 這個元件不被銷毀  -->
@@ -36,7 +36,6 @@
 // import { createApp } from 'vue'
 import SettingView from './components/SettingView.vue'
 import MyParticles from './components/myParticles.vue'
-
 </script>
 
 <style scoped>
@@ -50,4 +49,19 @@ import MyParticles from './components/myParticles.vue'
   color: aqua !important;
 }
 
+.MyParticles{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  display: flex;
+}
+
+.routerView{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+}
 </style>

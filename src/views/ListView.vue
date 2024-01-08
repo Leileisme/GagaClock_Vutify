@@ -139,7 +139,7 @@ const rules = {
     width: 90%;
     height: 80%;
     overflow-y: scroll;
-  background-color: rgba(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0,0.8);
   border-radius: 1rem;
     padding:1rem 3rem;
   }

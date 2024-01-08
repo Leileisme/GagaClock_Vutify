@@ -15,12 +15,6 @@ const routes = [
     meta: {
       title: '番茄鐘 | 清單'
     }
-  }, {
-    path: '/setting',
-    component: () => import('@/views/SettingView.vue'),
-    meta: {
-      title: '番茄鐘 | 設定'
-    }
   }
 ]
 
