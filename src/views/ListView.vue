@@ -49,7 +49,7 @@
                 <v-btn icon="mdi-delete" variant="text" color="red" @click="delItem(item.id)"></v-btn>
               </template>
               <template v-else>
-                <v-btn icon="mdi-check" variant="text" color="green" @click="onEditInputSubmit(item.id)"></v-btn>
+                <v-btn icon="mdi-check" variant="text" color="green" @click="onEditInputSubmit(item.id,i)"></v-btn>
                 <v-btn icon="mdi-undo" variant="text" color="red" @click="cancelEditItem(item.id)"></v-btn>
               </template>
             </td>
@@ -157,7 +157,7 @@ const rules = {
 
 @media(min-width:992px) {
   .box{
-  width: 70%;
+  width: 55%;
     }
   }
   </style>

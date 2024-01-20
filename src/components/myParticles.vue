@@ -22,7 +22,7 @@ import { onMounted } from 'vue'
 // window 都可以省略，但是因為這邊是 eslint 所以要加
 // '/particles.json' 這邊要 json檔，且必要放到 public 裡面，因為到網頁後再 get 請求
 onMounted(() => {
-  window.particlesJS.load('particles-js', '/particles.json', function () {
+  window.particlesJS.load('particles-js', './particles.json', function () {
     console.log('callback - particles-js config loaded')
   })
 })

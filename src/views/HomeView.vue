@@ -7,7 +7,6 @@
           <h1 class="time">{{currentTime}}</h1>
       </v-col>
       <v-col style="height: 100px;">
-        <!-- 這邊的鈴聲有bug? 開始的時候會響、按下一次也會響 -->
         <v-Btn class="btn" variant="text" icon="mdi-play" :disabled = "status === STATUS.COUNTING || (currentItem.length === 0 &&items.length === 0)" @click="startTimer"></v-Btn>
         <v-Btn class="btn" variant="text" icon="mdi-pause" :disabled = "status !== STATUS.COUNTING" @click="pauseTimer"></v-Btn>
         <v-Btn class="btn" variant="text" icon="mdi-skip-next" :disabled = "currentItem.length === 0" @click="finishTimer()"></v-Btn>
@@ -89,7 +88,7 @@ const finishTimer = () => {
     const { show, isSupported } = useWebNotification({
       title: '事項完成',
       body: currentItem.value,
-      icon: new URL('@/assets/tomato.png', import.meta.url).href
+      icon: new URL('@/assets/bird.png', import.meta.url).href
     })
     if (isSupported) {
       show()
@@ -174,7 +173,7 @@ text-shadow: 0px 0px  20px aqua ;
 
 @media(min-width:992px) {
   .box{
-  width: 60%;
+  width: 65%;
     }
 
   .text{
@@ -192,7 +191,16 @@ text-shadow: 0px 0px  20px aqua ;
 
   @media(min-width:1200px) {
   .box{
-  width: 47%;
+  width: 72%;
+    }
+  .time{
+  font-size: 13rem;
+  }
+  }
+
+  @media(min-width:1280px) {
+  .box{
+  width: 55%;
     }
   .time{
   font-size: 13rem;

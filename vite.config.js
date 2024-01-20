@@ -35,6 +35,7 @@ export default defineConfig({
         id: 'G-X57R0M4Q2L'
       }
     }),
+    // PWA 設定
     VitePWA({
       // 設定快取自動更新
       registerType: 'autoUpdate',
@@ -49,10 +50,36 @@ export default defineConfig({
         ],
         // 忽略網址參數，預設不會快取有參數的檔案或頁面
         ignoreURLParametersMatching: [/.*/]
+      },
+      // PWA要有的Json的設定檔，打包的時候會自動產生，開發模式看不到
+      manifest: {
+        // 名稱 有兩個
+        name: 'Gaga 嘎嘎鐘',
+        short_name: 'Gaga 嘎嘎鐘',
+        // 工作列的顏色
+        theme_color: '#00FFFF',
+        // 啟動畫面的背景色
+        background_color: '#000',
+        // 啟動網址
+        start_url: './',
+        //  PWA 顯示範圍，超出範圍會啟動瀏覽器
+        scope: './',
+        // 顯示方式
+        display: 'standalone',
+        icons: [
+          {
+            src: './android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: './android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
       }
-
     })
-
   ],
   define: { 'process.env': {} },
   resolve: {

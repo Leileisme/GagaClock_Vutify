@@ -6,14 +6,14 @@ const routes = [
     path: '/',
     component: () => import('@/views/HomeView.vue'),
     meta: {
-      title: '番茄鐘 | 首頁'
+      title: 'Gaga 嘎嘎鐘  | 首頁'
     }
   },
   {
     path: '/list',
     component: () => import('@/views/ListView.vue'),
     meta: {
-      title: '番茄鐘 | 清單'
+      title: 'Gaga 嘎嘎鐘  | 清單'
     }
   }
 ]

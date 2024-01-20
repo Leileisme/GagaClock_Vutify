@@ -3,9 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
+  <!-- favicon 不同尺寸 -->
+  <!-- 產生各種icon/HTML標籤的網址 https://realfavicongenerator.net/ -->
   <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Vuetify 3</title>
+
+
+  <!-- Apple PWA -->
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-title" content="Gaga 嘎嘎鐘">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#009e9e">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#009e9e">
+  <!-- 還有啟動畫面，安卓會自己讀json檔，apple要自己寫 -->
+  <!-- 標籤產生器，須把圖片資料放到public -->
+  <!-- https://appsco.pe/developer/splash-screens -->
+  <link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+  <!-- 微軟 MS PWA -->
+  <meta name="msapplication-TileColor" content="#000000">
+  <!-- 其實有另外一個檔案有附code -->
+  <meta name="msapplication-square150x150logo" content="/mstile-150x150.png">
+  
+  <!-- 產生分享用的 mata tag，示意圖算是預覽，圖片要自己放，一定要是https的網站的圖片 -->
+  <!-- https://metatags.io/ -->
+
+  <!-- Primary Meta Tags -->
+  <title>Gaga 嘎嘎鐘</title>
+  <meta name="title" content="Gaga 嘎嘎鐘" />
+  <meta name="description" content="Gaga 嘎嘎鐘，幫助你有效率的完成待辦事項!" />
+  
+  <!-- Open Graph / Facebook  社群分享-->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Leileisme.github.io/GagaClock_Vutify" />
+  <meta property="og:title" content="Gaga 嘎嘎鐘" />
+  <meta property="og:description" content="Gaga 嘎嘎鐘，幫助你有效率的完成待辦事項!" />
+  <meta property="og:image" content="https://Leileisme.github.io/GagaClock_Vutify/splashscreens/iphone6_splash.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://Leileisme.github.io/GagaClock_Vutify" />
+  <meta property="twitter:title" content="Gaga 嘎嘎鐘" />
+  <meta property="twitter:description" content="Gaga 嘎嘎鐘，幫助你有效率的完成待辦事項!" />
+  <meta property="twitter:image" content="https://Leileisme.github.io/GagaClock_Vutify/splashscreens/iphone6_splash.png" />
+  <meta >
 </head>
 
 <body>

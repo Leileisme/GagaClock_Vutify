@@ -5,13 +5,13 @@ export const useSettingsStore = defineStore('settings', {
     alarms: [
       {
         id: 1,
-        name: '鈴聲1',
-        file: new URL('@/assets/alarm.mp3', import.meta.url).href
+        name: '汪汪',
+        file: new URL('@/assets/dog.mp3', import.meta.url).href
       },
       {
         id: 2,
-        name: '鈴聲2',
-        file: new URL('@/assets/ya.mp3', import.meta.url).href
+        name: '敖嗚',
+        file: new URL('@/assets/aowu.mp3', import.meta.url).href
       }
     ],
     selectedAlarm: 1,

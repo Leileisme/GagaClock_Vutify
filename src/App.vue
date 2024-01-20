@@ -3,7 +3,7 @@
       <!-- 導覽列 -->
       <v-app-bar  height="80" class="appBar">
         <v-container class="d-flex align-center">
-          <v-app-bar-title  class="text-md-h4 font-weight-bold" style="line-height: 1">Pomodoro 番茄鐘</v-app-bar-title>
+          <v-app-bar-title  class="text-md-h4 font-weight-bold" style="line-height: 1">Gaga 嘎嘎鐘  </v-app-bar-title>
           <v-btn class="text-md-h6" style="line-height: 1" prepend-icon=" mdi-home"  to="/">首頁</v-btn>
           <v-btn  class="text-md-h6"  style="line-height: 1"  prepend-icon=" mdi-playlist-edit"  to="/list">清單</v-btn>
 
@@ -13,6 +13,7 @@
 
       <v-main class="main">
         <MyParticles class="MyParticles"></MyParticles>
+        <div class="Copyright">Copyright © 2024 Leilei Hsu</div>
 
         <!-- Component = 目前該顯示的路由元件，透過 :is="Component" 會傳進 <component> 這個標籤 -->
         <router-view v-slot="{ Component }" class="routerView">
@@ -63,5 +64,17 @@ import MyParticles from './components/myParticles.vue'
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 3;
+}
+
+.Copyright{
+  position: fixed;
+  bottom: 0;
+color: #555;
+ /* left: 50%; */
+ right: 0;
+ /* transform: translateX(-50%); */
+ margin: 12px;
+ margin-right: 18px;
+ font-size: 12px;
 }
 </style>
