@@ -1,53 +1,20 @@
-# default
+# Gaga 嘎嘎鐘
 
-## Project setup
+### 首頁畫面
 
-```
-# yarn
-yarn
+![首頁畫面](https://raw.githubusercontent.com/Leileisme/GagaClock_Vutify/main/images/01.jpg)
 
-# npm
-npm install
 
-# pnpm
-pnpm install
+### 清單畫面
 
-# bun
-bun install
-```
+![清單畫面](https://raw.githubusercontent.com/Leileisme/GagaClock_Vutify/main/images/02.jpg)
 
-### Compiles and hot-reloads for development
+### 設定畫面
+無論在哪一個頁面，都可點選跳出「設定」
 
-```
-# yarn
-yarn dev
+![設定畫面](https://raw.githubusercontent.com/Leileisme/GagaClock_Vutify/main/images/03.jpg)
 
-# npm
-npm run dev
+### 跳出「是否安裝應用程式」畫面
 
-# pnpm
-pnpm dev
+![安裝應用程式](https://raw.githubusercontent.com/Leileisme/GagaClock_Vutify/main/images/04.jpg)
 
-# bun
-bun run dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# bun
-bun run build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
